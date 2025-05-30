@@ -5,6 +5,7 @@ import com.sistema.restaurante.enums.DISPONIBILIDADE;
 
 public class PratoDTO {
 
+    private Long id;
     private String nome;
     private String descricao;
     private Double preco;
@@ -12,7 +13,8 @@ public class PratoDTO {
     private DISPONIBILIDADE disponibilidade;
     private String urlImagem;
 
-    public PratoDTO(String nome, String descricao, Double preco, CATEGORIA categoria, DISPONIBILIDADE disponibilidade, String urlImagem) {
+    public PratoDTO(Long id, String nome, String descricao, Double preco, CATEGORIA categoria, DISPONIBILIDADE disponibilidade, String urlImagem) {
+        this.id=id;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
@@ -22,6 +24,14 @@ public class PratoDTO {
     }
 
     public PratoDTO() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {

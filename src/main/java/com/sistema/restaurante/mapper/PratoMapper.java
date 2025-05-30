@@ -17,6 +17,7 @@ public class PratoMapper {
         }
 
         PratoDTO dto = new PratoDTO();
+        dto.setId(prato.getId());
         dto.setNome(prato.getNome());
         dto.setCategoria(prato.getCategoria());
         dto.setDescricao(prato.getDescricao());
@@ -35,6 +36,7 @@ public class PratoMapper {
         }
 
         Prato prato = new Prato();
+        prato.setId(pratoDTO.getId());
         prato.setNome(pratoDTO.getNome());
         prato.setCategoria(pratoDTO.getCategoria());
         prato.setDescricao(pratoDTO.getDescricao());
@@ -43,5 +45,14 @@ public class PratoMapper {
         prato.setUrlImagem(pratoDTO.getUrlImagem());
 
         return prato;
+    }
+
+    public static void atualizarDados (Prato prato, PratoDTO dto){
+        prato.setNome(dto.getNome());
+        prato.setDescricao(dto.getDescricao());
+        prato.setPreco(dto.getPreco());
+        prato.setCategoria(dto.getCategoria());
+        prato.setDisponibilidade(dto.getDisponibilidade());
+        prato.setUrlImagem(dto.getUrlImagem());
     }
 }
