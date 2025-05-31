@@ -1,0 +1,182 @@
+/* index.css */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+}
+
+body {
+  background: #f9f9fb;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container geral do app */
+#root > div {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Botões */
+button {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+button:hover {
+  background: #5848c2;
+  box-shadow: 0 6px 18px rgba(88, 72, 194, 0.4);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Inputs e selects */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border-radius: 15px;
+  border: 1.5px solid #ddd;
+  font-size: 16px;
+  transition: border-color 0.25s ease;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  resize: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
+}
+
+/* Textarea altura automática */
+textarea {
+  min-height: 80px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: #3a3a3a;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Card do prato */
+div[style*="border: 1px solid"] {
+  border-radius: 20px !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07) !important;
+  transition: box-shadow 0.3s ease;
+  background: #fff;
+}
+
+div[style*="border: 1px solid"]:hover {
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3) !important;
+}
+
+/* Imagem do prato */
+img {
+  border-radius: 20px 20px 0 0;
+  user-select: none;
+}
+
+/* Layout grid do cardápio */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Centralizar texto no fallback de imagem */
+.fallback-img {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #aaa;
+  font-size: 14px;
+  user-select: none;
+  border-radius: 20px 20px 0 0 !important;
+  height: 140px !important;
+  background-color: #f0f0f0 !important;
+}
+
+/* Form alinhado */
+form {
+  max-width: 450px;
+  margin: auto;
+}
+
+/* Espaçamento entre botões */
+form > div {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+/* Alinhamento dos botões do formulário */
+form button {
+  min-width: 100px;
+}
+
+/* Centralização Home */
+.home-container {
+  text-align: center;
+}
+
+.home-container img {
+  margin-bottom: 20px;
+}
+
+.home-container button {
+  min-width: 140px;
+}
+
+/* Alertas (usando alert do navegador para simplicidade) */
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+  #root > div {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
